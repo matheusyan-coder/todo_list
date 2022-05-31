@@ -15,6 +15,8 @@ app.listen(porta)*/
 
 //definir a pasta dos arquivos estáticos (css,imagens, jquery)
 app.use(express.static('./assets'))
+//definir o express como body parse
+app.use(express.urlencoded({extended:false}))
 
 //exportar o app e a porta 
 module.exports={app,porta}

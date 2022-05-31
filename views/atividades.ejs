@@ -8,14 +8,22 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="css/estilos.css">
 </head>
-<body>
+<body class="">
     <div class="container">
         <h1 class="text-center">Lista de Atividades</h1>
+        <h3 class="text-center">Usuário: <%=nome%></h3>
         <div class="row">
             <div class="col-sm text-center">
                 <h3 class="text-center">Cadastrar</h3>
-            <form action="" method="post" class="form-control">
-                <input type="date" name="data" id="" class="form-control" placeholder="Data">
+            <form action="/atividades" method="post" class="form-control">
+                <input type="hidden" name="id" value="<%=id%>">
+                <input type="hidden" name="nome" value="<%=nome%>">
+            <div class="form-floating">
+                <input type="date" name="data" id="floatingInput" class="form-control" placeholder="Data">
+                <label for="floatingInput">Data de entrega</label>
+            </div>
+
+                <div class="form-floating">
                 <select name="tipo" id="" name="tipo" class="form-control">
                     <option value="0">Selecione...</option>
                     <option value="1">AC</option>
@@ -23,16 +31,36 @@
                     <option value="3">REC</option>
                     <option value="4">EXAME</option>
                 </select>
+                <label for="floatingSelect">Tipo de Atividade</label>
+                </div>
+                <label for="" class="form-control">Como entregar:</label>
                 <input type="radio" name="entrega" class="form-check-input" id="" value="tarefa">Tarefa no Teams 
                 <input type="radio" name="entrega" class="form-check-input" id="" value="Chat">Chat do Teams
                 <input type="radio" name="entrega" class="form-check-input" id="" value="email">Email
                 <input type="radio" name="entrega" class="form-check-input" id="" value="formulario">Forms
-                <input type="password" name="senha" id="" class="form-control" value="Senha">
-                <input type="password" name="senha2" id="" class="form-control" value="Redigite a senha">
-                <input type="submit" value="Registrar" class="btn btn-info">
+                <label for="" class="form-control">Orientações:</label>
+                <textarea name="orientacao" id="" cols="30" rows="10" class="form-control"></textarea>
+                <input type="submit" value="Gravar" class="btn btn-info">
             </form>
-            <a href="/login" class="btn btn-info botao">Login</a>
             
+            </div>
+            <div class="col-sm text-center">
+                <h3>Atividades Cadastradas</h3>
+                <div class="card">
+                    <div class="card-header bg-dark text-light">Data:</div>
+                    <div class="card-body">
+                        <div class="card-title text-dark">Tipo:</div>
+                        <div class="card-subtitle text-dark">Entrega:</div>
+                        <div class="card-text text-dark">Orientações:</div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="input-group">
+                            <input type="button" value="Entregue" class="btn btn-succes form-control">
+                            <input type="button" value="Alterar" class="btn btn-warning form-control">
+                            <input type="button" value="Excluir" class="btn btn-danger form-control">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>  

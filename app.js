@@ -9,4 +9,6 @@ const porta = servidor.porta
 const consign = require('consign')
 consign().include('./routes').into(app)
 
-app.listen(porta)
+app.listen(porta, ()=>{
+    console.log("localhost")
+})
