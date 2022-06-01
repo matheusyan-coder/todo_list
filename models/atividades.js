@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 
 //criar a estrutura para o armazenamento das informações das atividades  
 const modelo = mongoose.Schema({
-    date:Date,
+    data:Date,
     tipo:String,
     entrega: String,
     disciplina:String,

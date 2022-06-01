@@ -46,21 +46,23 @@
             </div>
             <div class="col-sm text-center">
                 <h3>Atividades Cadastradas</h3>
+                <% for (var n=0; n<dados.length;n++){%>
                 <div class="card">
-                    <div class="card-header bg-dark text-light">Data:</div>
+                    <div class="card-header bg-dark text-light">Data:<%=dados[n].data%></div>
                     <div class="card-body">
-                        <div class="card-title text-dark">Tipo:</div>
-                        <div class="card-subtitle text-dark">Entrega:</div>
-                        <div class="card-text text-dark">Orientações:</div>
+                        <div class="card-title">Tipo:<%=dados[n].tipo%></div>
+                        <div class="card-subtitle">Entrega:<%=dados[n].entrega%></div>
+                        <div class="card-text">Orientações:<%=dados[n].instrucoes%></div>
                     </div>
                     <div class="card-footer">
                         <div class="input-group">
-                            <input type="button" value="Entregue" class="btn btn-succes form-control">
+                            <input type="button" value="Entregue" class="btn btn-success form-control">
                             <input type="button" value="Alterar" class="btn btn-warning form-control">
                             <input type="button" value="Excluir" class="btn btn-danger form-control">
                         </div>
                     </div>
                 </div>
+                <% }%>
             </div>
         </div>
     </div>  
