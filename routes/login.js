@@ -23,7 +23,7 @@ module.exports = (app)=>{
         }
         //buscar os documentos desse usuário
         const atividades = require('../models/atividades')
-        var buscar = await atividades.find({usuario:req.body.id})
+        var buscar = await atividades.find({usuario:procurar_id})
         //abrir a view atividades e enviar nome e id
         res.render('atividades.ejs', {nome:procurar.nome,id:procurar._id,
         dados:buscar})
