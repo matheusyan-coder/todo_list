@@ -21,14 +21,13 @@ module.exports = (app)=>{
         if(!comparar){
             return res.send("Senha incorreta")
         }
-        //buscar os documentos na coleção atividades desse usuário
-        const atividades = require('../models/atividades')
-        var buscar = await atividades.find({usuario:procurar._id}) //esse procurar ta acessando a collection usuarios, qnd vem da collection tem _
-        //abrir a view atividades e enviar nome e id
-        res.render('atividades.ejs', {nome:procurar.nome,id:procurar._id,dados:buscar})
+        
+        //redirecionar para a rota get atividades
+        res.redirect('/atividades?id='+procurar._id)
     })
 }
 
+//dados.id - formulário hidden-id 
 //req.body é uma informação que vem pelo corpo do formularip
 //req.query é pela barra de endereço
 //no var procurar faz um find dentro da tabela usuarios, por isso consegue ter acesso ao banco de dados e ao endereço correspondente

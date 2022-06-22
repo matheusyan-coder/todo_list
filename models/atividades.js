@@ -8,7 +8,8 @@ const modelo = mongoose.Schema({
     entrega: String,
     disciplina:String,
     instrucoes:String,
-    usuario: String
+    usuario: String,
+    status:{type:Number, default:0}
 })
 
 //gravar a estrutura na model atividades     
