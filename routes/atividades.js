@@ -93,11 +93,13 @@ module.exports = (app)=>{
     
     //criar a rota para gravar as alterações na atividade
     app.post('/alterar', async(req,res)=>{
+        //tirou essa atividade i don't know why, mas eu gostava dela
         //qual atividade será atualizada?
-        var id_a = req.query.id //recuperar algo da barra de endereço - request query
+        //var id_a = req.query.id //recuperar algo da barra de endereço - request query
+
         //quais são as informações digitadas?
         var infos = req.body
-        console.log(infos)
+        //console.log(infos)
         //gravar as alterações na collection atividades
         var gravar = await atividades.findOneAndUpdate (
             {_id:infos.id_a},
@@ -114,3 +116,5 @@ module.exports = (app)=>{
 
 }
 
+//rota get- buscar a atividade q quer alterar e exibir
+//rota post- gravar ne huur
